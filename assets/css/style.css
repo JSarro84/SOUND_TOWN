@@ -1,0 +1,30 @@
+/* Jumbotron Section*/
+
+#banner{
+/*background-image: url('assets/images/mic.jpg');*/
+color: white;
+}
+
+.jumbotron {
+text-align: center;
+font-family: 'Amatic SC', cursive;
+background-image: url('../images/mic.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+max-width: 100%;
+height: auto;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+p {
+	font-size: 50px;
+	color: #ccb806;
+}
+
+#submit {
+	background-color: #9b0f22;
+}
+
