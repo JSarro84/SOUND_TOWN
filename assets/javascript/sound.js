@@ -19,80 +19,70 @@ var cityCounter = 0;
 
 $("#genre-button").on("click", function() {
 
-genreCounter ++;
+	genreCounter ++;
 
-database.ref().set({
-        genreCount: genreCounter
-      });
-    });
+	database.ref().set({
+	        genreCount: genreCounter
+	});
+});
 
 $("#city-button").on("click", function() {
 
 cityCounter ++;
 
-database.ref().set({
-	cityCount: cityCounter
-})
+	database.ref().set({
+		cityCount: cityCounter
+	})
 });
 
 
-// // Dropdown fields/variable for storage of genre options user can search 
-// var genre = [
-// 	Jazz,
-// 	Metal,
-// 	Folk
-// 	];
+// Images API Code
 
-// // Dropdown fields for city search
-// var city = [
-// 	Oakland,
-// 	San_Francisco,
-// 	San_Jose
-// 	];
+var queryURL = "https://pixabay.com/api/?key=4887256-78769eb2138975758cc8d96cf"
 
-// Calling input from dropdown genre menu
-// $("#action").on("click", add);
-// // Adding inital load to firebase
+$.ajax({
+         url: queryURL,
+         method: "GET"
+})
 
-// function add (){
-//          event.preventDefault();
+.done(function(response) {
+         console.log(queryURL);
+		 console.log(response);
 
-//  var genreSearch={
-//  	Jazz: $("#genre").val(),
-//  }
-
-// 2. search/sort element:
-	// call api's 
-	//function comparing user entry genere with sound cloud id genre 
-	// if  ==== then true
-	// function comparing user entry city with sound cloud id city
-	// if === then true
-	// true = show === soundcloud data
-
-// SoundCloud API for genre & city search
-
-// var queryGenreSoundCloudURL = "https://api.soundcloud.com/tracks?client_id=" + genre + "/tracks.genre"
-// var queryCitySoundCloudURL = "https://api.soundcloud.com/tracks?client_id=" + city + "/tracks.city"
+// var images = response.images;
+// console.log("images", images);
+     
+// for (var i = 0; i < images.length; i++) {
+//  var image = images[i];
+//  console.log(image);
+//  var imageURL = image.url;
+//  var albumImage = "<img src='" + images + "'/>";
+//  $("#albumImage").append(albumImage);
 
 
-// // Ajax call for soundcloud api
-// $.ajax({
-// 	url: queryGenreSoundCloudURL,
-// 	method: "GET"
-// })
+// }
+});
 
-//    .done(function(response){
-//    		console.log(response);
-// 		// $("#testGenreButtonDropdown")response.html(genre);
+var queryURL = "https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj";
 
-//    });
+$.ajax({
+         url: queryURL,
+         method: "GET"
+})
+
+.done(function(response) {
+         console.log(queryURL);
+
+// console.log(response);
+// var images = response.images;
+// console.log("images", images);
+     
+// for (var i = 0; i < images.length; i++) {
+//  var image = images[i];
+//  console.log(image);
+//  var imageURL = image.url;
+//  var albumImage = "<img src='" + images + "'/>";
+//  $("#albumImage").append(albumImage);
 
 
-
-
-
-// 3. display selected tile element:
-	// display on click form/image which includes api to soundcloud artist id picture id songid and songkick venue id for specific artist from 
-	// append request to songkick api with html id that displays soundcloud html id displaying artist
-	// this included embed soundcould code and soundkick
-
+});
