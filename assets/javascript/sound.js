@@ -14,31 +14,52 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+var genreCounter = 0;
+var cityCounter = 0;
 
-// Dropdown fields/variable for storage of genre options user can search 
-var genre = [
-	Jazz,
-	Metal,
-	Folk
-	];
+$("#genre-button").on("click", function() {
 
-// Dropdown fields for city search
-var city = [
-	Oakland,
-	San_Francisco,
-	San_Jose
-	];
+genreCounter ++;
+
+database.ref().set({
+        genreCount: genreCounter
+      });
+    });
+
+$("#city-button").on("click", function() {
+
+cityCounter ++;
+
+database.ref().set({
+	cityCount: cityCounter
+})
+});
+
+
+// // Dropdown fields/variable for storage of genre options user can search 
+// var genre = [
+// 	Jazz,
+// 	Metal,
+// 	Folk
+// 	];
+
+// // Dropdown fields for city search
+// var city = [
+// 	Oakland,
+// 	San_Francisco,
+// 	San_Jose
+// 	];
 
 // Calling input from dropdown genre menu
-$("#action").on("click", add);
-// Adding inital load to firebase
+// $("#action").on("click", add);
+// // Adding inital load to firebase
 
-function add (){
-         event.preventDefault();
+// function add (){
+//          event.preventDefault();
 
- var genreSearch={
- 	Jazz: $("#genre").val(),
- }
+//  var genreSearch={
+//  	Jazz: $("#genre").val(),
+//  }
 
 // 2. search/sort element:
 	// call api's 
