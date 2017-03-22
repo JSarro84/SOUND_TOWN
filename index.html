@@ -58,7 +58,57 @@
 			</section>
 
 		</div> <!-- /. container-->
-	</body>
+
+
+
+
+
+		<!-- this is the artist's music player -->	
+	<div id="player">
+		<div class="media">
+  			<div class="media-left media-middle">
+
+  				<!-- this links bandImg to their soundcloud page -->	
+    			<a href="https://soundcloud.com/the-cushion-theory-1">
+
+    				<!-- this is #id to dump band image into -->	
+      				<img id="bandImg" src="assets/images/bandpic.jpg" alt="...">
+    			</a>
+  			</div>
+  			
+  			<div class="media-body">
+
+  				<!-- this is the div to dump band name into -->	
+    			<div id="bandName">The Cushion Theory</div>
+    			<p>Top Tracks by Artist</p>
+
+    			<!-- this is the div to dump #1 popular track -->	
+				<div id="trackOne">
+					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/255496518&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+				</div>
+				<!-- this is the div to dump #2 popular track -->
+				<div id="trackTwo">
+					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/202596986&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+				</div>
+				<!-- this is the div to dump #1 popular track -->
+				<div id="trackThree">
+					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77303651&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+				</div>
+			<!-- closes media body -->	
+  			</div>
+  		<!-- closes media -->	
+		</div>
+	<!-- closes player -->	
+	</div>
+
+	<!-- This is an example of a welcoming prompt -->	
+	<div id="welcome">
+		<h3>Welcome to SoundTown</h3>
+		<div id="type">To begin discovering local music you'll love, simply click on an artist to hear their most popular songs. Change the town and genre to discover even more! Click the artist picture to visit their page.</div>
+	</div>
+
+
+</body>
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script type="text/javascript"></script>
