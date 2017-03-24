@@ -20,6 +20,227 @@
 })(jQuery); 
 //End Navigation Functionsand End of use strict
 
+//Start Masonry Function 
+// =====================================================================
+var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
+console.log("ADDING GRID");
+$grid.on( 'click', '.grid-item-content', function() {
+
+  var itemContent = this;
+  setItemContentPixelSize( itemContent );
+
+  var itemElem = itemContent.parentNode;
+  $( itemElem ).toggleClass('is-expanded');
+
+  // force redraw
+  var redraw = itemContent.offsetWidth;
+  // renable default transition
+  itemContent.style[ transitionProp ] = '';
+
+  addTransitionListener( itemContent );
+  setItemContentTransitionSize( itemContent, itemElem );
+
+  $grid.masonry();
+});
+
+var docElem = document.documentElement;
+var transitionProp = typeof docElem.style.transition == 'string' ?
+    'transition' : 'WebkitTransition';
+var transitionEndEvent = {
+  WebkitTransition: 'webkitTransitionEnd',
+  transition: 'transitionend'
+}[ transitionProp ];
+
+function setItemContentPixelSize( itemContent ) {
+  var previousContentSize = getSize( itemContent );
+  // disable transition
+  itemContent.style[ transitionProp ] = 'none';
+  // set current size in pixels
+  itemContent.style.width = previousContentSize.width + 'px';
+  itemContent.style.height = previousContentSize.height + 'px';
+}
+
+function addTransitionListener( itemContent ) {
+  // reset 100%/100% sizing after transition end
+  var onTransitionEnd = function() {
+    itemContent.style.width = '';
+    itemContent.style.height = '';
+    itemContent.removeEventListener( transitionEndEvent, onTransitionEnd );
+  };
+  itemContent.addEventListener( transitionEndEvent, onTransitionEnd );
+}
+
+function setItemContentTransitionSize( itemContent, itemElem ) {
+  // set new size
+  var size = getSize( itemElem );
+  itemContent.style.width = size.width + 'px';
+  itemContent.style.height = size.height + 'px';
+}
+
+// 2nd part
+
+// external js: masonry.pkgd.js
+
+var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
+
+window.$grid = $grid;
+
+$grid.on( 'click', '.grid-item-content', function() {
+
+  var itemContent = this;
+  setItemContentPixelSize( itemContent );
+
+  var itemElem = itemContent.parentNode;
+  $( itemElem ).toggleClass('is-expanded');
+
+  // force redraw
+  var redraw = itemContent.offsetWidth;
+  // renable default transition
+  itemContent.style[ transitionProp ] = '';
+
+  addTransitionListener( itemContent );
+  setItemContentTransitionSize( itemContent, itemElem );
+
+  $grid.masonry();
+});
+
+var docElem = document.documentElement;
+var transitionProp = typeof docElem.style.transition == 'string' ?
+    'transition' : 'WebkitTransition';
+var transitionEndEvent = {
+  WebkitTransition: 'webkitTransitionEnd',
+  transition: 'transitionend'
+}[ transitionProp ];
+
+function setItemContentPixelSize( itemContent ) {
+  var previousContentSize = getSize( itemContent );
+  // disable transition
+  itemContent.style[ transitionProp ] = 'none';
+  // set current size in pixels
+  itemContent.style.width = previousContentSize.width + 'px';
+  itemContent.style.height = previousContentSize.height + 'px';
+}
+
+function addTransitionListener( itemContent ) {
+  // reset 100%/100% sizing after transition end
+  var onTransitionEnd = function() {
+    itemContent.style.width = '';
+    itemContent.style.height = '';
+    itemContent.removeEventListener( transitionEndEvent, onTransitionEnd );
+  };
+  itemContent.addEventListener( transitionEndEvent, onTransitionEnd );
+}
+
+function setItemContentTransitionSize( itemContent, itemElem ) {
+  // set new size
+  var size = getSize( itemElem );
+  itemContent.style.width = size.width + 'px';
+  itemContent.style.height = size.height + 'px';
+}
+// ENDS MASONRY
+
+// Start Ghiphy Fuction
+// ======================================================================
+  var topics = ['Beyonce', 'Gorillaz', 'Prince' ];
+
+$(document).ready(function(){createButtons();
+$('#addArtistName').on('click', function(){
+    addArtistName();
+
+    return false;
+    })
+
+});
+
+function displayArtistNameInfo(){
+    var ArtistName = $(this).data('Name');
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + ArtistName + "&api_key=dc6zaTOxFJmzC&limit=30";
+
+    $.ajax(
+        {url: queryURL, method: 'GET'})
+        .done(function(response) 
+        {
+
+    var results = response.data;
+        for (var i = 0; i < results.length; i++) {
+    var gifDiv = $('<div class="gifDiv">')
+    var rating = results[i].rating;
+    var p = $('<p>').text( "Rating: " + rating);
+    var myGridItem =
+      '<div class="grid-item">' +
+       '<div class="grid-item-content"><img src="' + results[i].images.fixed_height_still.url + '" data-still="' + '"> </div>' +
+      '</div>';
+    var ArtistNameImage = $('<img>');
+        ArtistNameImage.attr('src', results[i].images.fixed_height_still.url);
+        ArtistNameImage.attr('data-still', results[i].images.fixed_height_still.url);
+        ArtistNameImage.attr('data-animate', results[i].images.fixed_height.url);
+        ArtistNameImage.attr('data-state', 'still');
+        ArtistNameImage.attr('class', 'gif');
+
+        gifDiv.append(ArtistNameImage)
+        gifDiv.append(p)
+
+            $('.grid').prepend(myGridItem);
+        }
+
+    });
+}
+
+function animateAndpauseGif(){
+    var state = $(this).attr('data-state');
+        if ( state == 'still'){
+
+        $(this).attr('src', $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+
+        }else{
+
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+
+    }
+}
+
+function createButtons(){
+    $('#buttonsAppearHere').empty();
+    for (var i = 0; i < topics.length; i++) {
+
+    var x = $('<button>')
+        x.addClass('buttons');
+        x.text(topics[i]);
+        x.attr('data-ArtistName', topics[i]);
+        $('#buttonsAppearHere').append(x);
+
+    }
+}
+
+function addArtistName(){
+    var newArtistName = $('#ArtistName-input').val().trim();
+    console.log(newArtistName + "here");
+    topics.push(newArtistName);
+    createButtons();
+
+}
+
+$(document).on('click', '.gif', animateAndpauseGif)
+$(document).on('click', '.buttons', displayArtistNameInfo)
+// END OF GHIPHY
+
+
+
+
+
+
+
+
 
 
 //Starts Artist Sound Track (Spotify) Function
