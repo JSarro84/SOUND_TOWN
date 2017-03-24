@@ -1,116 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en-us">
+<head>
 
-	<head>
-		 <meta charset="UTF-8">
-		 <title>SOUND TOWN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		  <!-- Bootstrap -->
+    <title>SoundTown</title>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-		<script src="/path/to/masonry.pkgd.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	</head>
+    <!-- Additional fonts for this theme -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-	<body>
-		
-		<div id="container">
-	 
-			<section id="banner">
-			
+    <!-- Plugin CSS -->
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-				<div class="jumbotron">
-		 			<h1>It's time to face the music</h1>
-		 			<p>Discovering and experiencing local music </p>
-		 			<p><a id="submit" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
 
-					<div class="row">
-					 <div class="col-lg-6"> <!-- Location input section-->
-					   <div class="input-group">
-					     <span class="input-group-btn">
-					       <button class="btn btn-default" type="button" id="city-button">Go!</button>
-					     </span>
-					     <input type="text" class="form-control" placeholder="Search for Town">
-					   </div><!--end location input section-->
-					 </div><!-- /.col-lg-6 -->
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
 
-					 <div class="col-lg-6"> <!-- Genre input section-->
-					   <div class="input-group">
-					     <input type="text" class="form-control" placeholder="Search for Genre">
-					     <span class="input-group-btn">
-					       <button class="btn btn-default" type="button" id="genre-button">Go!</button>
-					     </span>
-					   </div><!-- End Genre input section -->
-					 </div><!-- /.col-lg-6 -->
-					</div><!-- /.row -->
-
-				</div><!--/.jumboton-->
-			</section>
-
-			<section id="tiles"> <!-- Artist albums section-->
-				<div class="grid">
-					 <div class="grid-item"><img src="assets/images/acdc.jpeg"></div>
-					 <div class="grid-item grid-item--width2"><img src="assets/images/beat.jpeg"></div>
-					 <div class="grid-item"><img src="assets/images/mjbad.jpeg"></div>
-				</div>
-			</section>
-
-		</div> <!-- /. container-->
+    <!--Masonry-->
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="/path/to/masonry.pkgd.min.js"></script>
+        <!--End Masonry-->
 
 
 
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar fixed-top navbar-toggleable-md navbar-light">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <a class="navbar-brand page-scroll" href="#page-top">SoundTown</a>
+            <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ml-auto">
+                 <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#portfolio">Find Local Bands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#about">Purchase Tickets</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+
+    <!-- Jumbotron-->
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">SOUNDTOWN</h1>
+                <hr>
+                <p>Discovering and experiencing music</p>
+            </div>
+
+            <div>
+                      <form id="artist-form">
+                        <!-- Label for Text Box -->
+                        <label for="artist-input">Choose Your Artist</label>
+                        <!-- Text Input Box -->
+                        <input type="text" id="artist-input"><br>
+                        <!-- Submit Button -->
+                        <input id="select-artist" class="btn btn-primary btn-xl page-scroll" type="submit" value="GO!">
+                      </form>
+            
+            </div>
+        </div>
+    </header>
 
 
-		<!-- this is the artist's music player -->	
-	<div id="player">
-		<div class="media">
-  			<div class="media-left media-middle">
 
-  				<!-- this links bandImg to their soundcloud page -->	
-    			<a href="https://soundcloud.com/the-cushion-theory-1">
 
-    				<!-- this is #id to dump band image into -->	
-      				<img id="bandImg" src="assets/images/bandpic.jpg" alt="...">
-    			</a>
-  			</div>
-  			
-  			<div class="media-body">
+    
+<!-- Tiles section-->
+<!-- Images -->
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded"></div>
+                                <div class="project-name"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/2.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                   Band Name
+                                </div>
+                                <div class="project-name">
+                                    Band Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/3.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/4.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/5.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/6.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end photos-->
 
-  				<!-- this is the div to dump band name into -->	
-    			<div id="bandName">The Cushion Theory</div>
-    			<p>Top Tracks by Artist</p>
 
-    			<!-- this is the div to dump #1 popular track -->	
-				<div id="trackOne">
-					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/255496518&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-				</div>
-				<!-- this is the div to dump #2 popular track -->
-				<div id="trackTwo">
-					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/202596986&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-				</div>
-				<!-- this is the div to dump #1 popular track -->
-				<div id="trackThree">
-					<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77303651&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-				</div>
-			<!-- closes media body -->	
-  			</div>
-  		<!-- closes media -->	
-		</div>
-	<!-- closes player -->	
-	</div>
 
-	<!-- This is an example of a welcoming prompt -->	
-	<div id="welcome">
-		<h3>Welcome to SoundTown</h3>
-		<div id="type">To begin discovering local music you'll love, simply click on an artist to hear their most popular songs. Change the town and genre to discover even more! Click the artist picture to visit their page.</div>
-	</div>
+    <!--music input-->
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <h2 class="section-heading text-white">Songs go here</h2>
+                    <hr class="light">
+                    <p class="text-faded">
+                    <!-- Spotify Player Goes Here -->
+                    <div id="player-div"></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- jQuery Version 3.1.1 -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Tether -->
+    <script src="lib/tether/tether.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="lib/scrollreveal/scrollreveal.min.js"></script>
+    <script src="lib/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
 
 </body>
-<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="assets/javascript/sound.js"></script>
-
+<script>
+  function getArtistTrack(artist) {
+    // Running an initial search to identify the artist's unique Spotify id
+    var queryURL = "https://api.spotify.com/v1/search?q=" + artist + "&type=artist";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      // Printing the entire object to console
+      console.log(response);
+      // Printing the artist id from the Spotify object to console
+      var artistID = response.artists.items[0].id;
+      // Building a SECOND URL to query another Spotify endpoint (this one for the tracks)
+      var queryURLTracks = "https://api.spotify.com/v1/artists/" + artistID + "/top-tracks?country=US";
+      // Running a second AJAX call to get the tracks associated with that Spotify id
+      $.ajax({
+        url: queryURLTracks,
+        method: "GET"
+      }).done(function(trackResponse) {
+        // Logging the tracks
+        console.log(trackResponse);
+        // Building a Spotify player playing the top song associated with the artist
+        // (NOTE YOU NEED TO BE LOGGED INTO SPOTIFY)
+        var player = "<iframe src='https://embed.spotify.com/?uri=spotify:track:" +
+          trackResponse.tracks[0].id +
+          "' frameborder='0' allowtransparency='true'></iframe>";
+        // Appending the new player into the HTML
+        $("#player-div").append(player);
+      });
+    });
+  }
+  // Event handler for user clicking the select-artist button
+  $("#select-artist").on("click", function(event) {
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // Storing the artist name
+    var artist = $("#artist-input").val().trim();
+    // Running the getArtistTrack (passing in the artist as an argument)
+    getArtistTrack(artist);
+  });
+</script>
 </html>
