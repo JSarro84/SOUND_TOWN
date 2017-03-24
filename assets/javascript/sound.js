@@ -38,7 +38,8 @@ cityCounter ++;
 
 // Images API Code
 
-var queryURL = "https://pixabay.com/api/?key=4887256-78769eb2138975758cc8d96cf"
+
+var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + image + "&api_key=dc6zaTOxFJmzC";
 
 $.ajax({
          url: queryURL,
