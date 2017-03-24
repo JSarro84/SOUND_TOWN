@@ -149,20 +149,20 @@ function setItemContentTransitionSize( itemContent, itemElem ) {
 
 // Start Ghiphy Fuction
 // ======================================================================
-  var topics = ['Beyonce', 'Gorillaz', 'Prince' ];
+  var topics = ['Prince', 'Beyonce', 'Gorillaz' ];
 
 $(document).ready(function(){createButtons();
-$('#addArtistName').on('click', function(){
-    addArtistName();
+$('#addartistBreed').on('click', function(){
+    addartistBreed();
 
     return false;
     })
 
 });
 
-function displayArtistNameInfo(){
-    var ArtistName = $(this).data('Name');
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + ArtistName + "&api_key=dc6zaTOxFJmzC&limit=30";
+function displayartistBreedInfo(){
+    var artistBreed = $(this).data('breed');
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + artistBreed + "&api_key=dc6zaTOxFJmzC&limit=30";
 
     $.ajax(
         {url: queryURL, method: 'GET'})
@@ -178,14 +178,14 @@ function displayArtistNameInfo(){
       '<div class="grid-item">' +
        '<div class="grid-item-content"><img src="' + results[i].images.fixed_height_still.url + '" data-still="' + '"> </div>' +
       '</div>';
-    var ArtistNameImage = $('<img>');
-        ArtistNameImage.attr('src', results[i].images.fixed_height_still.url);
-        ArtistNameImage.attr('data-still', results[i].images.fixed_height_still.url);
-        ArtistNameImage.attr('data-animate', results[i].images.fixed_height.url);
-        ArtistNameImage.attr('data-state', 'still');
-        ArtistNameImage.attr('class', 'gif');
+    var artistBreedImage = $('<img>');
+        artistBreedImage.attr('src', results[i].images.fixed_height_still.url);
+        artistBreedImage.attr('data-still', results[i].images.fixed_height_still.url);
+        artistBreedImage.attr('data-animate', results[i].images.fixed_height.url);
+        artistBreedImage.attr('data-state', 'still');
+        artistBreedImage.attr('class', 'gif');
 
-        gifDiv.append(ArtistNameImage)
+        gifDiv.append(artistBreedImage)
         gifDiv.append(p)
 
             $('.grid').prepend(myGridItem);
@@ -216,22 +216,22 @@ function createButtons(){
     var x = $('<button>')
         x.addClass('buttons');
         x.text(topics[i]);
-        x.attr('data-ArtistName', topics[i]);
+        x.attr('data-breed', topics[i]);
         $('#buttonsAppearHere').append(x);
 
     }
 }
 
-function addArtistName(){
-    var newArtistName = $('#ArtistName-input').val().trim();
-    console.log(newArtistName + "here");
-    topics.push(newArtistName);
+function addartistBreed(){
+    var newBreed = $('#artistBreed-input').val().trim();
+    console.log(newBreed + "here");
+    topics.push(newBreed);
     createButtons();
 
 }
 
 $(document).on('click', '.gif', animateAndpauseGif)
-$(document).on('click', '.buttons', displayArtistNameInfo)
+$(document).on('click', '.buttons', displayartistBreedInfo)
 // END OF GHIPHY
 
 
