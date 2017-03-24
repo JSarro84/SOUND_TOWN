@@ -9,6 +9,10 @@
     <meta name="author" content="">
 
     <title>SoundTown</title>
+    <!-- MANSONRY JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- MANSONRY Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <!-- Bootstrap Core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -53,29 +57,27 @@
             <div>
                 <form id="artist-form">
                 <!-- Label for Text Box -->
-                <label for="artist-input">Choose Your Artist</label>
+                <label for="artist-input">Artist Song</label>
                 <!-- Text Input Box -->
                 <input type="text" id="artist-input"><br>
                 <!-- Submit Button -->
                 <input id="select-artist" class="btn btn-primary btn-xl page-scroll" type="submit" value="GO!">
-                </form>
+
+                <br>
             </div><!-- Ends user input section-->
+            <br>
+            <br>
+            <center>
+                <form id="ArtistName-form" class="container col-md-12">
+                    <label for="ArtistName-input">Artist Image</label>
+                    <input type="text" id="ArtistName-input"><br>
+
+                    <input id="addArtistName" class="btn btn-primary btn-xl page-scroll" type="submit" value="GO!">
+                </form>
+                </center>
         </div><!--Ends header-content-->
     </header><!-- End jumbotron -->
     
-<!-- Images section-->
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
-
-
-
-            </div><!-- End row no-gutter popup-gallery-->
-        </div> <!--Ends container-fluid-->
-    </section><!--ends images photos-->
-
-
-
     <!--music input-->
     <section class="bg-primary" id="about">
         <div class="container">
@@ -89,6 +91,30 @@
         </div>
     </section> <!-- Ends music input-->
 
+    <!-- Images section-->
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery"> 
+
+            <div class="row">
+                <div id="buttonsAppearHere" class="container col-md-12"></div>
+            </div>
+
+            <div class="row"></div>
+
+
+            <div class="grid">
+                <div class="grid-sizer"></div>
+             </div>   
+        </div><!-- End row no-gutter popup-gallery-->
+    </div> <!--Ends container-fluid-->
+</section><!--ends images photos-->
+
+
+
+   <!-- MANSORY CDN -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://masonry.desandro.com/masonry.pkgd.js'></script>
 
     <!-- jQuery Version 3.1.1 -->
     <script src="lib/jquery/jquery.js"></script>
@@ -105,6 +131,7 @@
     <script src="lib/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Theme JavaScript -->
+        <script src="js/masonry.js"></script>
     <script src="js/javascript.js"></script>
 
 </body>

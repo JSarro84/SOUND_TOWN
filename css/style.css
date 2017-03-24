@@ -41,7 +41,7 @@ p {
   margin-bottom: 20px; }
 
 .bg-primary {
-  background-color: #9ba4b2 !important; }
+  background-color: #F05F40 !important; }
 
 .bg-dark {
   background-color: #9ba4b2 !important;
@@ -326,6 +326,16 @@ header {
 .btn-xl {
   padding: 15px 30px; }
 
+
+/*PP*/
+    color: white;
+background-color: #F05F40;
+padding: 15px 30px;
+
+
+
+/*Button ends*/
+
 ::-moz-selection {
   color: white;
   text-shadow: none;
@@ -346,3 +356,79 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #222222; }
+
+
+/*MANSORY CSS*/
+.grid {
+  background: #EEE;
+}
+
+/* item is invisible, but used for layout */
+.grid-item,
+.grid-sizer {
+  width: 20%;
+}
+
+.grid-item {
+  float: left;
+  height: 100px;
+}
+
+/* grid-item-content is visible, and transitions size */
+.grid-item-content {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border: 2px solid #000000;
+  border-color: #000000;
+  border-radius: 5px;
+  -webkit-transition: width 0.4s, height 0.4s;
+          transition: width 0.4s, height 0.4s;
+}
+
+.grid-item:hover .grid-item-content {
+  border-color: white;
+  cursor: pointer;
+}
+
+/* both item and item content change size */
+.grid-item.is-expanded {
+  width: 60%;
+  height: 200px;
+  z-index: 2;
+}
+
+.grid-item.is-expanded .grid-item-content {
+  background: #F90;
+}
+
+img {
+  width: 100%
+}
+.gifsAppearHere {
+  width: 100%
+}
+
+.dogBreed-input {
+  width: 100%
+}
+
+body {
+  background-color: black;
+}
+button {
+  color: white;
+  background-color: #F05F40;
+  border: 2px;
+}
+
+label {
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+form {
+  display: block;
+  line-height: 1.75em;
+}
