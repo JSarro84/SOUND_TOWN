@@ -41,7 +41,8 @@ p {
   margin-bottom: 20px; }
 
 .bg-primary {
-  background-color: #F05F40 !important; }
+  background-color: #F05F40 !important;
+}
 
 .bg-dark {
   background-color: #9ba4b2 !important;
@@ -420,6 +421,7 @@ button {
   color: white;
   background-color: #F05F40;
   border: 2px;
+  border-color: white;
 }
 
 label {
@@ -431,4 +433,20 @@ label {
 form {
   display: block;
   line-height: 1.75em;
+}
+#lbbb, #select-artist, #addartistBreed{
+  float:left;
+  margin-left:2%;
+
+}
+#artist-input, #artistBreed-input {
+  float:left;
+  width: 70%;
+}
+
+#lccc {
+  float:left;
+  margin-left: 1%;
+}
+
 }
