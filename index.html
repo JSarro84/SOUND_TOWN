@@ -50,16 +50,16 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">SOUNDTOWN</h1>
                 <hr>
-                <p>Discovering and experiencing music</p>
+                <h6>Discovering and experiencing music</h6><br>
             </div>
 
            <!-- User input section-->
             <div>
                 <form id="artist-form">
                 <!-- Label for Text Box -->
-                <label for="artist-input">Artist Song</label>
+                <label id="lbbb" for="artist-input">Search Music</label>
                 <!-- Text Input Box -->
-                <input type="text" id="artist-input"><br>
+                <input type="text" id="artist-input">
                 <!-- Submit Button -->
                 <input id="select-artist" class="btn btn-primary btn-xl page-scroll" type="submit" value="GO!">
 
@@ -69,8 +69,8 @@
             <br>
             <center>
                  <form id="artistBreed-form" class="container col-md-8">
-        <label for="artistBreed-input"><span>Artist</span></label>
-        <input type="text" id="artistBreed-input" ><br>
+        <label id="lccc" for="artistBreed-input"><span>Search Images</span></label>
+        <input type="text" id="artistBreed-input">
         <input id="addartistBreed" type="submit" class="btn btn-primary btn-xl page-scroll" value="GO!">
     </form>
                 </center>
@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
-                    <h2 class="section-heading text-white">Songs go here</h2>
+                    <h2 class="section-heading text-white">Music Player</h2>
                    
                     <!-- Spotify Player Goes Here -->
                     <div id="player-div"></div>
