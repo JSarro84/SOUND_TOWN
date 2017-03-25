@@ -1,4 +1,3 @@
-
 //Navigation Functions
 // =====================================================================
 (function($) {
@@ -287,8 +286,5 @@ $(document).on('click', '.buttons', displayartistBreedInfo)
   });
  //Ends Artist Sound Track (Spotify) Function 
 
-
  // Images 
- // =====================================================================
-
-
+ // =============================
